@@ -1,4 +1,4 @@
-package Garage;
+package garage;
 
 public abstract class Vehicle {
 
@@ -8,7 +8,7 @@ public abstract class Vehicle {
 	protected int speed;
 	protected String colour;
 
-	/////////////////// Constructors/////////////////////////////
+	///////////////////Constructors/////////////////////////////
 
 	public Vehicle(String Vname, double Vprice, int Vspeed) {
 		this.name = Vname;
@@ -25,7 +25,7 @@ public abstract class Vehicle {
 		this.colour = Vcolour;
 	}
 
-	////////////////// Methods///////////////////////////////
+	//////////////////Methods///////////////////////////////
 	
 	public int getSpeed() {
 		return this.speed;

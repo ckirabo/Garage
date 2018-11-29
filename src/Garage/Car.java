@@ -1,9 +1,10 @@
-package Garage;
+package garage;
 
 public class Car extends Vehicle {
 ///////////////////////////////Attributes///////////////////////////
 	
 	String brand;
+	
 
 
 ////////////////////////////Constructors////////////////////////////
@@ -17,6 +18,11 @@ public class Car extends Vehicle {
 	
 	
 //////////////////////////methods//////////////////////////////////
+
+	public String getBrand() {
+		return this.brand;
+	}
+	
 	
 	public void startIgnition() {
 		System.out.print("Ignition on");
@@ -26,20 +32,24 @@ public class Car extends Vehicle {
 		System.out.print("Ignition off");
 	}
 	
-	public int getSpeed() {
-		return this.getSpeed();
-	}
+	
 	
 	public String toString() {
-		return    "Brand: "  + this.brand
-		       + "Car name: "+ this.getName()
-		       + "Price"     + this.getPrice()
-		       + "Speed"     + this.getSpeed()
-		       + "Colour"    + this.getColour();
+		return    "Brand: "    + this.getBrand()     + " " 
+		       + " Name: "     + this.getName()     + " " 
+		       + " Price: £"   + this.getPrice()    + " " 
+		       + " Speed: "     + this.getSpeed()    + " " 
+		       + " Colour: "    + this.getColour();
 	}
 	
 	public int speedingUp() {
 		accelerate(getSpeed());
+		return getSpeed();
+	}
+	
+
+	public int speedingDown() {
+		deccelerate(getSpeed());
 		return getSpeed();
 	}
 	
