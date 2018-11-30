@@ -4,27 +4,55 @@ import java.util.ArrayList;
 
 public class Garage {
 
-	public static void main(String args[]) {
-		
-	Car car1 = new Car("Toyota", "Pan", 250.00, 100, "Red");
-	Car car2 = new Car("Mercedes", "Guil", 400.00, 70, "Black");
-	Car car3 = new Car("Volvo", "Stein", 300.00, 120, "Yellow");
 	
-	ArrayList<Vehicle> newGarage = new ArrayList<Vehicle>();
+	private ArrayList<Vehicle> Garage = new ArrayList<Vehicle>();
 	
-	newGarage.add(car1);
-	newGarage.add(car2);
-	newGarage.add(car3);
-	
-
-	paintJobBill(newGarage);
-	
+	public void addVehicle(Vehicle a) {
+		Garage.add(a);
 	}
 	
-	// method to find the price and calculate the price for repairs depending on its type
+	public void removeVehicle(Vehicle b) {
+		Garage.remove(b);
+	}
+
+	public String toString() {
+		return Garage.toString();
+		
+	}
 	
-	public static void paintJobBill(ArrayList<Vehicle> a) {
-		//give ID??
+	public double fixVehicle(Vehicle a, boolean yes) {
+		
+		double chargeForFix = 50.00; 
+		double noCharge = 0.0;
+		
+		if( yes) {
+			return chargeForFix;
+		}
+		
+		return noCharge;
+	}
+	
+	
+	public double paintJob(Vehicle b, boolean yes) {
+		double paintJobCharge;
+		double noCharge = 0.0;
+		
+		if(b.getColour().equals("Yellow")) {
+			paintJobCharge = 60.00;
+			return paintJobCharge;
+		}
+		else if( b.getColour().equals("Red")){
+			paintJobCharge = 80.00;
+			return paintJobCharge;
+		}
+		
+		return noCharge;
+		
+	}
+	
+
+ 	public void paintJobBill(ArrayList<Vehicle> a) {
+	
 		double originalPrice;
 		double paintJobBill;
 		double total;
@@ -51,9 +79,7 @@ public class Garage {
 	}
 	
 	
-	
-	
-	public static double getBill() {
+	public double getBill() {
 		return 0.0;
 	}
 	
